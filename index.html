@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur SelfCare Orange - Redirection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .logo {
+            margin-bottom: 30px;
+        }
+        .container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #ff7900;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #ff7900;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #e56a00;
+        }
+        .loading {
+            margin-top: 20px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+    <!-- Redirection automatique après 2 secondes -->
+    <meta http-equiv="refresh" content="2;url=/selfcare/login">
+</head>
+<body>
+    <div class="container">
+        <h1>Simulateur SelfCare Orange</h1>
+        <p>Bienvenue sur le simulateur de l'application SelfCare pour les tests de redirection OTP.</p>
+        <p>Vous allez être redirigé automatiquement vers la page de login...</p>
+        <div class="loading">Chargement en cours...</div>
+        <a href="/selfcare/login" class="btn">Accéder directement</a>
+    </div>
+
+    <script>
+        // Script pour redirection alternative si meta refresh ne fonctionne pas
+        setTimeout(function() {
+            window.location.href = "/selfcare/login";
+        }, 2000);
+    </script>
+</body>
+</html>
