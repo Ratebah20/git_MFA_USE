@@ -1,0 +1,11 @@
+[Mon May 05 14:37:36.967961 2025] [ssl:info] [pid 402906:tid 134631173129920] [client 192.168.158.203:20475] AH01964: Connection to child 13 established (server acc.portail.orange.lu:443)
+[Mon May 05 14:37:36.906633 2025] [ssl:info] [pid 402907:tid 134631315736256] [client 192.168.158.203:20476] AH01998: Connection closed to child 77 with abortive shutdown (server acc.portail.orange.lu:443)
+[Mon May 05 14:37:36.906614 2025] [ssl:info] [pid 402907:tid 134631315736256] SSL Library Error: error:0A000416:SSL routines::sslv3 alert certificate unknown (SSL alert number 46)
+[Mon May 05 14:37:36.906589 2025] [ssl:info] [pid 402907:tid 134631315736256] [client 192.168.158.203:20476] AH02008: SSL library error 1 in handshake (server acc.portail.orange.lu:443)
+[Mon May 05 14:37:36.875280 2025] [ssl:info] [pid 402907:tid 134631315736256] [client 192.168.158.203:20476] AH01964: Connection to child 77 established (server acc.portail.orange.lu:443)
+[Mon May 05 14:37:19.043747 2025] [ssl:info] [pid 402907:tid 134631357679296] [client 192.168.158.203:42043] AH01964: Connection to child 73 established (server acc.portail.orange.lu:443)
+[Mon May 05 14:37:18.991453 2025] [ssl:info] [pid 402907:tid 134631076660928] [client 192.168.158.203:42045] AH01998: Connection closed to child 87 with abortive shutdown (server acc.portail.orange.lu:443)
+[Mon May 05 14:37:18.991447 2025] [ssl:info] [pid 402907:tid 134631076660928] SSL Library Error: error:0A000416:SSL routines::sslv3 alert certificate unknown (SSL alert number 46)
+[Mon May 05 14:37:18.991420 2025] [ssl:info] [pid 402907:tid 134631076660928] [client 192.168.158.203:42045] AH02008: SSL library error 1 in handshake (server acc.portail.orange.lu:443)
+[Mon May 05 14:37:18.961395 2025] [ssl:info] [pid 402907:tid 134631076660928] [client 192.168.158.203:42045] AH01964: Connection to child 87 established (server acc.portail.orange.lu:443)
+[Mon May 05 14:37:10.554051 2025] [wsgi:error] [pid 402905:tid 134631468828352] [remote 192.168.158.203:41970] INFO:app: MFA d\xc3\xa9j\xc3\xa0 configur\xc3\xa9

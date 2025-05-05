@@ -1,0 +1,316 @@
+2025-05-05 14:20:29,988 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 14:20:29,993 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 14:21:32,383 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.17.238:5000
+2025-05-05 14:21:32,384 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 14:21:32,390 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 14:21:32,759 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 14:21:32,765 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 14:22:03,582 - werkzeug - INFO - 172.18.17.238 - - [05/May/2025 14:22:03] "GET / HTTP/1.1" 200 -
+2025-05-05 14:22:04,048 - werkzeug - INFO - 172.18.17.238 - - [05/May/2025 14:22:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-05 14:23:10,015 - app - INFO - URL de redirection configurée: http://172.18.17.238:5000/selfcare
+2025-05-05 14:23:10,021 - werkzeug - INFO - 172.18.17.238 - - [05/May/2025 14:23:10] "GET /selfcare/login HTTP/1.1" 200 -
+2025-05-05 14:24:10,340 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.17.238:5000
+2025-05-05 14:24:10,341 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 14:24:10,345 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 14:24:10,681 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 14:24:10,688 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 14:24:12,724 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 14:24:12] "GET / HTTP/1.1" 200 -
+2025-05-05 14:24:14,929 - app - INFO - URL de redirection configurée: http://127.0.0.1:5000/selfcare
+2025-05-05 14:24:14,933 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 14:24:14] "GET /selfcare/login HTTP/1.1" 200 -
+2025-05-05 14:30:28,166 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.17.238:5000
+2025-05-05 14:30:28,167 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 14:30:28,177 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 14:30:28,535 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 14:30:28,542 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 14:30:30,850 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 14:30:30] "GET / HTTP/1.1" 200 -
+2025-05-05 14:30:32,385 - app - INFO - URL de redirection configurée: http://127.0.0.1:5000/selfcare
+2025-05-05 14:30:32,405 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 14:30:32] "GET /selfcare/login HTTP/1.1" 200 -
+2025-05-05 14:51:34,002 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.17.238:5000
+2025-05-05 14:51:34,005 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 14:51:34,012 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 14:51:34,349 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 14:51:34,355 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 14:51:36,542 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 14:51:36] "GET / HTTP/1.1" 200 -
+2025-05-05 14:51:38,571 - app - INFO - URL de redirection configurée: http://127.0.0.1:5000/selfcare
+2025-05-05 14:51:38,593 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 14:51:38] "GET /selfcare/login HTTP/1.1" 200 -
+2025-05-05 14:54:00,481 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 14:54:00] "[32mGET /test-redirect/7RqzMXsD8hvhchhXffJp7MVYaZCSHhmX HTTP/1.1[0m" 302 -
+2025-05-05 14:54:00,489 - app - INFO - Reçu sur /selfcare avec params: {'otp_token': '7RqzMXsD8hvhchhXffJp7MVYaZCSHhmX'}
+2025-05-05 14:54:00,553 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 14:54:00] "GET /selfcare?otp_token=7RqzMXsD8hvhchhXffJp7MVYaZCSHhmX HTTP/1.1" 200 -
+2025-05-05 14:54:12,546 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 14:54:12] "[35m[1mPOST /resolve-otp HTTP/1.1[0m" 500 -
+2025-05-05 14:54:20,586 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 14:54:20] "GET / HTTP/1.1" 200 -
+2025-05-05 14:57:31,008 - app - INFO - URL de redirection configurée: http://127.0.0.1:5000/selfcare
+2025-05-05 14:57:31,009 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 14:57:31] "GET /selfcare/login HTTP/1.1" 200 -
+2025-05-05 14:58:59,892 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 14:58:59] "[32mGET /test-redirect/wXrX4OMqlpcyTMDQEF56dBdsDJFueDWQ HTTP/1.1[0m" 302 -
+2025-05-05 14:58:59,899 - app - INFO - Reçu sur /selfcare avec params: {'otp_token': 'wXrX4OMqlpcyTMDQEF56dBdsDJFueDWQ'}
+2025-05-05 14:58:59,901 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 14:58:59] "GET /selfcare?otp_token=wXrX4OMqlpcyTMDQEF56dBdsDJFueDWQ HTTP/1.1" 200 -
+2025-05-05 14:59:02,606 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 14:59:02] "[35m[1mPOST /resolve-otp HTTP/1.1[0m" 500 -
+2025-05-05 15:26:52,318 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.17.238:5000
+2025-05-05 15:26:52,319 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 15:26:52,324 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:26:52,728 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:26:52,735 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:26:56,834 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:26:56] "GET / HTTP/1.1" 200 -
+2025-05-05 15:27:02,070 - app - INFO - URL de redirection configurée: http://127.0.0.1:5000/selfcare
+2025-05-05 15:27:02,072 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:27:02] "GET /selfcare/login HTTP/1.1" 200 -
+2025-05-05 15:28:09,775 - app - INFO - Reçu sur /selfcare avec params: {'otp_token': 'lbsGtHDZifP8x5a0tEkY12L6jdL9uTcp'}
+2025-05-05 15:28:09,817 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:28:09] "GET /selfcare?otp_token=lbsGtHDZifP8x5a0tEkY12L6jdL9uTcp HTTP/1.1" 200 -
+2025-05-05 15:28:11,867 - app - INFO - Tentative de résolution de l'OTP: lbsGtHDZifP8x5a0tEkY12L6jdL9uTcp
+2025-05-05 15:28:11,868 - app - INFO - Appel à l'API: https://acc.portail.orange.lu/resolve-otp
+2025-05-05 15:28:12,110 - app - INFO - Réponse du serveur: Status 400
+2025-05-05 15:28:12,111 - app - INFO - Headers: {'Date': 'Mon, 05 May 2025 13:28:12 GMT', 'Server': 'Apache', 'Content-Length': '117', 'Content-Security-Policy': "frame-ancestors 'self';", 'Connection': 'close', 'Content-Type': 'text/html; charset=utf-8'}
+2025-05-05 15:28:12,112 - app - ERROR - Erreur lors de la conversion de la réponse en JSON: Expecting value: line 1 column 1 (char 0)
+2025-05-05 15:28:12,113 - app - ERROR - Contenu brut: <!doctype html>
+<html lang=en>
+<title>400 Bad Request</title>
+<h1>Bad Request</h1>
+<p>The CSRF token is missing.</p>
+
+2025-05-05 15:28:12,116 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:28:12] "[35m[1mPOST /resolve-otp HTTP/1.1[0m" 500 -
+2025-05-05 15:30:00,545 - werkzeug - INFO -  * Detected change in 'C:\\Users\\arateb\\Env_dev\\faire\\acc.portail.orange.lu\\use_MFA\\app.py', reloading
+2025-05-05 15:30:00,577 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:30:01,134 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:30:01,141 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:30:42,317 - werkzeug - INFO -  * Detected change in 'C:\\Users\\arateb\\Env_dev\\faire\\acc.portail.orange.lu\\use_MFA\\app.py', reloading
+2025-05-05 15:30:42,349 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:30:42,798 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:30:42,804 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:31:01,390 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.17.238:5000
+2025-05-05 15:31:01,392 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 15:31:01,402 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:31:01,775 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:31:01,781 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:31:05,179 - app - INFO - Reçu sur /selfcare avec params: {'otp_token': 'lbsGtHDZifP8x5a0tEkY12L6jdL9uTcp'}
+2025-05-05 15:31:05,191 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:31:05] "GET /selfcare?otp_token=lbsGtHDZifP8x5a0tEkY12L6jdL9uTcp HTTP/1.1" 200 -
+2025-05-05 15:31:07,206 - app - INFO - Tentative de résolution de l'OTP: lbsGtHDZifP8x5a0tEkY12L6jdL9uTcp
+2025-05-05 15:31:07,207 - app - INFO - Récupération d'un token CSRF depuis le serveur MFA...
+2025-05-05 15:31:07,532 - app - INFO - Status réponse page d'accueil: 200
+2025-05-05 15:31:07,534 - app - ERROR - Erreur inattendue lors de la validation de l'OTP: name 're' is not defined
+2025-05-05 15:31:07,538 - app - ERROR - Traceback (most recent call last):
+  File "C:\Users\arateb\Env_dev\faire\acc.portail.orange.lu\use_MFA\app.py", line 80, in resolve_otp
+    csrf_match = re.search(r'name="csrf_token"\s+value="([^"]+)"', html_content)
+                 ^^
+NameError: name 're' is not defined. Did you forget to import 're'
+
+2025-05-05 15:31:07,542 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:31:07] "[35m[1mPOST /resolve-otp HTTP/1.1[0m" 500 -
+2025-05-05 15:38:36,680 - werkzeug - INFO -  * Detected change in 'C:\\Users\\arateb\\Env_dev\\faire\\acc.portail.orange.lu\\use_MFA\\app.py', reloading
+2025-05-05 15:38:36,741 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:38:37,199 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:38:37,206 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:38:53,491 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.17.238:5000
+2025-05-05 15:38:53,492 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 15:38:53,497 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:38:53,840 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:38:53,847 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:38:58,046 - app - INFO - Reçu sur /selfcare avec params: {'otp_token': 'lbsGtHDZifP8x5a0tEkY12L6jdL9uTcp'}
+2025-05-05 15:38:58,055 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:38:58] "GET /selfcare?otp_token=lbsGtHDZifP8x5a0tEkY12L6jdL9uTcp HTTP/1.1" 200 -
+2025-05-05 15:39:00,421 - app - INFO - Tentative de résolution de l'OTP: lbsGtHDZifP8x5a0tEkY12L6jdL9uTcp
+2025-05-05 15:39:00,423 - app - INFO - Récupération d'un token CSRF depuis le serveur MFA...
+2025-05-05 15:39:00,781 - app - INFO - Status réponse page d'accueil: 200
+2025-05-05 15:39:00,783 - app - WARNING - Impossible de trouver le token CSRF dans la page HTML
+2025-05-05 15:39:00,785 - app - INFO - Appel à l'API avec CSRF: https://acc.portail.orange.lu/resolve-otp
+2025-05-05 15:39:00,786 - app - INFO - Payload envoyé: {'otp_token': 'lbsGtHDZifP8x5a0tEkY12L6jdL9uTcp'}
+2025-05-05 15:39:00,820 - app - INFO - Réponse du serveur: Status 400
+2025-05-05 15:39:00,822 - app - INFO - Headers: {'Date': 'Mon, 05 May 2025 13:39:00 GMT', 'Server': 'Apache', 'Content-Length': '117', 'Content-Security-Policy': "frame-ancestors 'self';", 'Connection': 'close', 'Content-Type': 'text/html; charset=utf-8'}
+2025-05-05 15:39:00,824 - app - ERROR - Erreur lors de la conversion de la réponse en JSON: Expecting value: line 1 column 1 (char 0)
+2025-05-05 15:39:00,825 - app - ERROR - Contenu brut: <!doctype html>
+<html lang=en>
+<title>400 Bad Request</title>
+<h1>Bad Request</h1>
+<p>The CSRF token is missing.</p>
+
+2025-05-05 15:39:00,829 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:39:00] "[35m[1mPOST /resolve-otp HTTP/1.1[0m" 500 -
+2025-05-05 15:41:20,437 - werkzeug - INFO -  * Detected change in 'C:\\Users\\arateb\\Env_dev\\faire\\acc.portail.orange.lu\\use_MFA\\app.py', reloading
+2025-05-05 15:41:20,484 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:41:20,837 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:41:20,844 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:41:33,918 - werkzeug - INFO -  * Detected change in 'C:\\Users\\arateb\\Env_dev\\faire\\acc.portail.orange.lu\\use_MFA\\app.py', reloading
+2025-05-05 15:41:33,993 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:41:34,416 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:41:34,423 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:42:32,692 - werkzeug - INFO -  * Detected change in 'C:\\Users\\arateb\\Env_dev\\faire\\acc.portail.orange.lu\\use_MFA\\app.py', reloading
+2025-05-05 15:42:32,729 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:42:33,122 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:42:33,130 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:42:50,209 - werkzeug - INFO -  * Detected change in 'C:\\Users\\arateb\\Env_dev\\faire\\acc.portail.orange.lu\\use_MFA\\app.py', reloading
+2025-05-05 15:42:50,239 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:42:50,637 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:42:50,643 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:43:13,186 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.17.238:5000
+2025-05-05 15:43:13,187 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 15:43:13,194 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:43:13,524 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:43:13,531 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:43:18,479 - app - INFO - Reçu sur /selfcare avec params: {'otp_token': 'lbsGtHDZifP8x5a0tEkY12L6jdL9uTcp'}
+2025-05-05 15:43:18,525 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:43:18] "GET /selfcare?otp_token=lbsGtHDZifP8x5a0tEkY12L6jdL9uTcp HTTP/1.1" 200 -
+2025-05-05 15:43:20,132 - app - INFO - Tentative de résolution de l'OTP: lbsGtHDZifP8x5a0tEkY12L6jdL9uTcp
+2025-05-05 15:43:20,133 - app - INFO - Récupération d'un token CSRF depuis le serveur MFA...
+2025-05-05 15:43:20,466 - app - INFO - Status réponse page d'accueil: 200
+2025-05-05 15:43:20,466 - app - INFO - Token CSRF récupéré: ImY3OGUwMD...
+2025-05-05 15:43:20,467 - app - INFO - Appel à l'API avec CSRF: https://acc.portail.orange.lu/resolve-otp
+2025-05-05 15:43:20,467 - app - INFO - Payload envoyé: {'otp_token': 'lbsGtHDZifP8x5a0tEkY12L6jdL9uTcp', 'csrf_token': 'ImY3OGUwMDQzNDcyMGI1OTBjN2YyMzQ2MDNkNGQ3ZDYwNzEzZTEzY2Qi.aBjAeA.Mp7T0yWxgPaZW1Pdz50I-qhU5CA'}
+2025-05-05 15:43:20,497 - app - INFO - Réponse du serveur: Status 400
+2025-05-05 15:43:20,497 - app - INFO - Headers: {'Date': 'Mon, 05 May 2025 13:43:20 GMT', 'Server': 'Apache', 'Content-Length': '122', 'Vary': 'Cookie', 'Content-Security-Policy': "frame-ancestors 'self';", 'Connection': 'close', 'Content-Type': 'text/html; charset=utf-8'}
+2025-05-05 15:43:20,498 - app - ERROR - Erreur lors de la conversion de la réponse en JSON: Expecting value: line 1 column 1 (char 0)
+2025-05-05 15:43:20,500 - app - ERROR - Contenu brut: <!doctype html>
+<html lang=en>
+<title>400 Bad Request</title>
+<h1>Bad Request</h1>
+<p>The referrer header is missing.</p>
+
+2025-05-05 15:43:20,502 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:43:20] "[35m[1mPOST /resolve-otp HTTP/1.1[0m" 500 -
+2025-05-05 15:44:53,822 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.17.238:5000
+2025-05-05 15:44:53,823 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 15:44:53,828 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:44:54,164 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:44:54,170 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:44:56,417 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:44:56] "GET / HTTP/1.1" 200 -
+2025-05-05 15:44:57,877 - app - INFO - URL de redirection configurée: http://127.0.0.1:5000/selfcare
+2025-05-05 15:44:57,897 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:44:57] "GET /selfcare/login HTTP/1.1" 200 -
+2025-05-05 15:46:16,250 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:46:16] "[32mGET /test-redirect/WBGi9UtbHeD78yQB2S6ILKl9fVlYM3Fk HTTP/1.1[0m" 302 -
+2025-05-05 15:46:16,255 - app - INFO - Reçu sur /selfcare avec params: {'otp_token': 'WBGi9UtbHeD78yQB2S6ILKl9fVlYM3Fk'}
+2025-05-05 15:46:16,267 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:46:16] "GET /selfcare?otp_token=WBGi9UtbHeD78yQB2S6ILKl9fVlYM3Fk HTTP/1.1" 200 -
+2025-05-05 15:46:18,400 - app - INFO - Tentative de résolution de l'OTP: WBGi9UtbHeD78yQB2S6ILKl9fVlYM3Fk
+2025-05-05 15:46:18,401 - app - INFO - Récupération d'un token CSRF depuis le serveur MFA...
+2025-05-05 15:46:18,758 - app - INFO - Status réponse page d'accueil: 200
+2025-05-05 15:46:18,758 - app - INFO - Token CSRF récupéré: Ijg4MDA4YT...
+2025-05-05 15:46:18,759 - app - INFO - Appel à l'API avec CSRF: https://acc.portail.orange.lu/resolve-otp
+2025-05-05 15:46:18,759 - app - INFO - Payload envoyé: {'otp_token': 'WBGi9UtbHeD78yQB2S6ILKl9fVlYM3Fk', 'csrf_token': 'Ijg4MDA4YTU1ZmYzNGVlNGQ0NGQwNjFlMzI1ZjdiY2Y4M2VmNmYyMGEi.aBjBKg.XcTIyvH7u8D4hvKSTMct7yvG62w'}
+2025-05-05 15:46:18,847 - app - INFO - Réponse du serveur: Status 400
+2025-05-05 15:46:18,849 - app - INFO - Headers: {'Date': 'Mon, 05 May 2025 13:46:18 GMT', 'Server': 'Apache', 'Content-Length': '122', 'Vary': 'Cookie', 'Content-Security-Policy': "frame-ancestors 'self';", 'Connection': 'close', 'Content-Type': 'text/html; charset=utf-8'}
+2025-05-05 15:46:18,851 - app - ERROR - Erreur lors de la conversion de la réponse en JSON: Expecting value: line 1 column 1 (char 0)
+2025-05-05 15:46:18,851 - app - ERROR - Contenu brut: <!doctype html>
+<html lang=en>
+<title>400 Bad Request</title>
+<h1>Bad Request</h1>
+<p>The referrer header is missing.</p>
+
+2025-05-05 15:46:18,858 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:46:18] "[35m[1mPOST /resolve-otp HTTP/1.1[0m" 500 -
+2025-05-05 15:46:58,802 - werkzeug - INFO -  * Detected change in 'C:\\Users\\arateb\\Env_dev\\faire\\acc.portail.orange.lu\\use_MFA\\app.py', reloading
+2025-05-05 15:46:58,837 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:46:59,219 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:46:59,227 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:47:18,168 - app - INFO - Reçu sur /selfcare avec params: {'otp_token': 'WBGi9UtbHeD78yQB2S6ILKl9fVlYM3Fk'}
+2025-05-05 15:47:18,180 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:47:18] "GET /selfcare?otp_token=WBGi9UtbHeD78yQB2S6ILKl9fVlYM3Fk HTTP/1.1" 200 -
+2025-05-05 15:47:19,705 - app - INFO - Tentative de résolution de l'OTP: WBGi9UtbHeD78yQB2S6ILKl9fVlYM3Fk
+2025-05-05 15:47:19,706 - app - INFO - Récupération d'un token CSRF depuis le serveur MFA...
+2025-05-05 15:47:20,044 - app - INFO - Status réponse page d'accueil: 200
+2025-05-05 15:47:20,045 - app - INFO - Token CSRF récupéré: ImUyYjEyMD...
+2025-05-05 15:47:20,045 - app - INFO - Appel à l'API avec CSRF: https://acc.portail.orange.lu/resolve-otp
+2025-05-05 15:47:20,045 - app - INFO - Payload envoyé: {'otp_token': 'WBGi9UtbHeD78yQB2S6ILKl9fVlYM3Fk', 'csrf_token': 'ImUyYjEyMDJlNTIwYWQ3NWZiYzhiOGEwNjI5ZGJmMmU0MDJkNGE0ZWMi.aBjBaA.jhydDmQbwhy1HzzEIg6N5PDrGmk'}
+2025-05-05 15:47:20,104 - app - INFO - Réponse du serveur: Status 500
+2025-05-05 15:47:20,105 - app - INFO - Headers: {'Date': 'Mon, 05 May 2025 13:47:20 GMT', 'Server': 'Apache', 'Content-Length': '84', 'Vary': 'Cookie', 'Content-Security-Policy': "frame-ancestors 'self';", 'Connection': 'close', 'Content-Type': 'application/json'}
+2025-05-05 15:47:20,106 - app - INFO - Contenu de la réponse: {'message': "Erreur serveur: 'tuple' object has no attribute 'get'", 'success': False}
+2025-05-05 15:47:20,109 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:47:20] "[35m[1mPOST /resolve-otp HTTP/1.1[0m" 500 -
+2025-05-05 15:48:54,492 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.17.238:5000
+2025-05-05 15:48:54,493 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 15:48:54,499 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:48:54,848 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:48:54,856 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:48:56,997 - app - INFO - Reçu sur /selfcare avec params: {'otp_token': 'WBGi9UtbHeD78yQB2S6ILKl9fVlYM3Fk'}
+2025-05-05 15:48:57,005 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:48:57] "GET /selfcare?otp_token=WBGi9UtbHeD78yQB2S6ILKl9fVlYM3Fk HTTP/1.1" 200 -
+2025-05-05 15:48:58,551 - app - INFO - Tentative de résolution de l'OTP: WBGi9UtbHeD78yQB2S6ILKl9fVlYM3Fk
+2025-05-05 15:48:58,552 - app - INFO - Récupération d'un token CSRF depuis le serveur MFA...
+2025-05-05 15:48:58,885 - app - INFO - Status réponse page d'accueil: 200
+2025-05-05 15:48:58,885 - app - INFO - Token CSRF récupéré: IjdmNWUyNT...
+2025-05-05 15:48:58,886 - app - INFO - Appel à l'API avec CSRF: https://acc.portail.orange.lu/resolve-otp
+2025-05-05 15:48:58,886 - app - INFO - Payload envoyé: {'otp_token': 'WBGi9UtbHeD78yQB2S6ILKl9fVlYM3Fk', 'csrf_token': 'IjdmNWUyNTE5YmVmYTZhOGNiZGNmYzUyYjFmYmYxODQ0NDNjYTZkYzci.aBjByg.P_KudXgJIHfb7tQU_VzlgDp_L7w'}
+2025-05-05 15:48:58,930 - app - INFO - Réponse du serveur: Status 500
+2025-05-05 15:48:58,931 - app - INFO - Headers: {'Date': 'Mon, 05 May 2025 13:48:58 GMT', 'Server': 'Apache', 'Content-Length': '84', 'Vary': 'Cookie', 'Content-Security-Policy': "frame-ancestors 'self';", 'Connection': 'close', 'Content-Type': 'application/json'}
+2025-05-05 15:48:58,932 - app - INFO - Contenu de la réponse: {'message': "Erreur serveur: 'tuple' object has no attribute 'get'", 'success': False}
+2025-05-05 15:48:58,934 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:48:58] "[35m[1mPOST /resolve-otp HTTP/1.1[0m" 500 -
+2025-05-05 15:49:49,387 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.17.238:5000
+2025-05-05 15:49:49,388 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 15:49:49,393 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 15:49:49,728 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 15:49:49,734 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 15:49:51,849 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:49:51] "GET / HTTP/1.1" 200 -
+2025-05-05 15:49:51,976 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:49:51] "GET / HTTP/1.1" 200 -
+2025-05-05 15:50:00,023 - app - INFO - URL de redirection configurée: http://127.0.0.1:5000/selfcare
+2025-05-05 15:50:00,027 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:50:00] "GET /selfcare/login HTTP/1.1" 200 -
+2025-05-05 15:51:04,521 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:51:04] "[32mGET /test-redirect/2IRfArBFy3QgJus9AMST6txnjGGs6IM8 HTTP/1.1[0m" 302 -
+2025-05-05 15:51:04,528 - app - INFO - Reçu sur /selfcare avec params: {'otp_token': '2IRfArBFy3QgJus9AMST6txnjGGs6IM8'}
+2025-05-05 15:51:04,538 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:51:04] "GET /selfcare?otp_token=2IRfArBFy3QgJus9AMST6txnjGGs6IM8 HTTP/1.1" 200 -
+2025-05-05 15:51:06,406 - app - INFO - Tentative de résolution de l'OTP: 2IRfArBFy3QgJus9AMST6txnjGGs6IM8
+2025-05-05 15:51:06,408 - app - INFO - Récupération d'un token CSRF depuis le serveur MFA...
+2025-05-05 15:51:06,744 - app - INFO - Status réponse page d'accueil: 200
+2025-05-05 15:51:06,745 - app - INFO - Token CSRF récupéré: IjUxYTFkZG...
+2025-05-05 15:51:06,746 - app - INFO - Appel à l'API avec CSRF: https://acc.portail.orange.lu/resolve-otp
+2025-05-05 15:51:06,746 - app - INFO - Payload envoyé: {'otp_token': '2IRfArBFy3QgJus9AMST6txnjGGs6IM8', 'csrf_token': 'IjUxYTFkZGQwMmZlZTVjY2M5Mjk4YWY3MDU1OThjNDcyYWJmM2RhMDUi.aBjCSg.TCttzz0a2GhNH8hbOlJ5KPMQ5oU'}
+2025-05-05 15:51:06,793 - app - INFO - Réponse du serveur: Status 200
+2025-05-05 15:51:06,794 - app - INFO - Headers: {'Date': 'Mon, 05 May 2025 13:51:06 GMT', 'Server': 'Apache', 'Content-Length': '311', 'Vary': 'Cookie', 'Content-Security-Policy': "frame-ancestors 'self';", 'Keep-Alive': 'timeout=5, max=98', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json'}
+2025-05-05 15:51:06,796 - app - INFO - Contenu de la réponse: {'access_token': '8IafrWnAAU3WgUUGV7xJWj3R4Tz4yRlCVgvtRKy33oT2qb07', 'expires_in': 3572, 'message': 'Token OTP validé avec succès', 'redirect_uri': 'https://client.orange.lu/selfcare/login', 'refresh_token': 'OSIOh4511fxtX6GsR0NztWKyBFXy5jaBll81o0rpU3TiKL39', 'success': True, 'token_type': 'Bearer', 'user_id': 20}
+2025-05-05 15:51:06,800 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 15:51:06] "POST /resolve-otp HTTP/1.1" 200 -
+2025-05-05 16:34:09,890 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 16:34:09] "GET / HTTP/1.1" 200 -
+2025-05-05 16:34:14,347 - app - INFO - URL de redirection configurée: http://127.0.0.1:5000/selfcare
+2025-05-05 16:34:14,349 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 16:34:14] "GET /selfcare/login HTTP/1.1" 200 -
+2025-05-05 16:35:42,374 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 16:35:42] "[32mGET /test-redirect/ndlmkDChi28Ki0uHRqWHR1l6EmYMKPTU HTTP/1.1[0m" 302 -
+2025-05-05 16:35:42,379 - app - INFO - Reçu sur /selfcare avec params: {'otp_token': 'ndlmkDChi28Ki0uHRqWHR1l6EmYMKPTU'}
+2025-05-05 16:35:42,381 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 16:35:42] "GET /selfcare?otp_token=ndlmkDChi28Ki0uHRqWHR1l6EmYMKPTU HTTP/1.1" 200 -
+2025-05-05 16:35:44,237 - app - INFO - Tentative de résolution de l'OTP: ndlmkDChi28Ki0uHRqWHR1l6EmYMKPTU
+2025-05-05 16:35:44,238 - app - INFO - Récupération d'un token CSRF depuis le serveur MFA...
+2025-05-05 16:35:44,564 - app - INFO - Status réponse page d'accueil: 200
+2025-05-05 16:35:44,565 - app - INFO - Token CSRF récupéré: ImEzYmNjZT...
+2025-05-05 16:35:44,566 - app - INFO - Appel à l'API avec CSRF: https://acc.portail.orange.lu/resolve-otp
+2025-05-05 16:35:44,568 - app - INFO - Payload envoyé: {'otp_token': 'ndlmkDChi28Ki0uHRqWHR1l6EmYMKPTU', 'csrf_token': 'ImEzYmNjZTE2YjM2MDljNGIxNzUyZmYxMTJhNGY0MTg0YTM1YjZjNTUi.aBjMwA.K6eK4gKVMSi9W0UXgPr4FtmGWa8'}
+2025-05-05 16:35:44,620 - app - INFO - Réponse du serveur: Status 200
+2025-05-05 16:35:44,621 - app - INFO - Headers: {'Date': 'Mon, 05 May 2025 14:35:44 GMT', 'Server': 'Apache', 'Content-Length': '302', 'Vary': 'Cookie', 'Content-Security-Policy': "frame-ancestors 'self';", 'Keep-Alive': 'timeout=5, max=98', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json'}
+2025-05-05 16:35:44,622 - app - INFO - Contenu de la réponse: {'access_token': 'AYBqOiz5Jhx9erlKsg6h1l5mleed8PcoRcDUMs6SECPnqWtQ', 'expires_in': 3579, 'message': 'Token OTP validé avec succès', 'redirect_uri': 'http://localhost:5000/selfcare', 'refresh_token': 'NTjEixBiszCsWQ7BxFo89hVUVAFRSCPt5WTXh0nxmJT79WAn', 'success': True, 'token_type': 'Bearer', 'user_id': 20}
+2025-05-05 16:35:44,625 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 16:35:44] "POST /resolve-otp HTTP/1.1" 200 -
+2025-05-05 16:39:31,536 - werkzeug - INFO -  * Detected change in 'C:\\Users\\arateb\\Env_dev\\faire\\acc.portail.orange.lu\\use_MFA\\app.py', reloading
+2025-05-05 16:39:31,609 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 16:39:32,177 - app - WARNING - pyOpenSSL n'est pas installé. Installation avec pip install pyOpenSSL
+2025-05-05 16:39:32,192 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 16:39:32,199 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 16:56:33,507 - app - INFO - pyOpenSSL est installé, configuration HTTPS...
+2025-05-05 16:56:33,550 - app - INFO - Certificat: ssl\server.crt, Clé: ssl\server.key
+2025-05-05 16:56:33,601 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://172.18.17.238:5000
+2025-05-05 16:56:33,602 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 16:56:33,604 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 16:56:34,026 - app - INFO - pyOpenSSL est installé, configuration HTTPS...
+2025-05-05 16:56:34,027 - app - INFO - Certificat: ssl\server.crt, Clé: ssl\server.key
+2025-05-05 16:56:34,039 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 16:56:34,043 - werkzeug - INFO -  * Debugger PIN: 103-698-125
+2025-05-05 16:57:51,851 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 16:57:51] "GET / HTTP/1.1" 200 -
+2025-05-05 16:57:52,345 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 16:57:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-05 16:58:00,999 - app - INFO - URL de redirection configurée: https://127.0.0.1:5000/selfcare
+2025-05-05 16:58:01,016 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 16:58:01] "GET /selfcare/login HTTP/1.1" 200 -
+2025-05-05 17:01:07,633 - werkzeug - INFO -  * Detected change in 'C:\\Users\\arateb\\Env_dev\\faire\\acc.portail.orange.lu\\use_MFA\\app.py', reloading
+2025-05-05 17:01:07,693 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 17:01:08,333 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 17:01:08,341 - werkzeug - INFO -  * Debugger PIN: 103-698-125

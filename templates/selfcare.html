@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelfCare Orange - Validation OTP</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 2rem;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #ff7900;
+            color: white;
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .card {
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        .btn-orange {
+            background-color: #ff7900;
+            color: white;
+        }
+        .btn-orange:hover {
+            background-color: #e56c00;
+            color: white;
+        }
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            padding: 1.5rem 0;
+            background-color: #f8f9fa;
+        }
+        .alert {
+            margin-top: 1rem;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .hidden {
+            display: none;
+        }
+        .spinner-border {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>SelfCare Orange</h1>
+            <p class="lead">Validation de l'authentification OTP</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header">
+                        Redirection OTP
+                    </div>
+                    <div class="card-body">
+                        <div id="otp-details">
+                            <h5>OTP reçu</h5>
+                            <p>Un OTP a été reçu dans la redirection depuis le portail MFA :</p>
+                            <pre id="otp-value">{{ otp if otp else 'Aucun OTP trouvé dans l\'URL' }}</pre>
+                            <p>URL complète :</p>
+                            <pre id="full-url">{{ full_url if full_url else 'Non fournie' }}</pre>
+                            
+                            <h5>Tous les paramètres reçus :</h5>
+                            <pre>{{ all_params|tojson(indent=2) }}</pre>
+                            
+                            {% if otp %}
+                            <div class="text-center mt-4">
+                                <button id="validate-button" class="btn btn-orange">
+                                    Valider l'OTP
+                                </button>
+                                <div id="loading" class="hidden mt-3">
+                                    <div class="spinner-border text-warning" role="status">
+                                        <span class="sr-only">Chargement...</span>
+                                    </div>
+                                    Validation en cours...
+                                </div>
+                            </div>
+                            {% else %}
+                            <div class="alert alert-warning">
+                                <strong>Attention :</strong> Aucun OTP n'a été trouvé dans l'URL. Assurez-vous d'avoir été correctement redirigé depuis le portail MFA.
+                            </div>
+                            <div class="text-center">
+                                <a href="/" class="btn btn-secondary">Retour à l'accueil</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div id="validation-result" class="hidden mt-4">
+                            <div class="alert alert-success hidden" id="result-success">
+                                <strong>Succès !</strong> L'OTP a été validé avec succès.
+                            </div>
+                            <div class="alert alert-danger hidden" id="result-error">
+                                <strong>Erreur !</strong> <span id="error-message"></span>
+                            </div>
+                            
+                            <h5 class="mt-3">Informations d'authentification</h5>
+                            <pre id="auth-info">Aucune information disponible</pre>
+                            
+                            <div class="text-center mt-4">
+                                <button id="login-button" class="btn btn-success hidden">
+                                    Se connecter à SelfCare
+                                </button>
+                                <a href="/" class="btn btn-secondary ml-2">
+                                    Retour à l'accueil
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>Simulateur SelfCare pour tests d'intégration - Orange Luxembourg</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Afficher l'URL complète
+            document.getElementById('full-url').textContent = window.location.href;
+            
+            // Récupérer l'OTP de l'URL (essayer plusieurs formats possibles)
+            const urlParams = new URLSearchParams(window.location.search);
+            const otpToken = urlParams.get('otp_token') || urlParams.get('otp') || '{{ otp }}';
+            
+            if (otpToken) {
+                // Gérer la validation de l'OTP
+                document.getElementById('validate-button').addEventListener('click', async function() {
+                    try {
+                        // Afficher le chargement
+                        document.getElementById('loading').classList.remove('hidden');
+                        document.getElementById('validate-button').disabled = true;
+                        
+                        // Appeler l'API pour valider l'OTP
+                        const response = await fetch('/resolve-otp', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                otp_token: otpToken
+                            })
+                        });
+                        
+                        // Cacher le chargement
+                        document.getElementById('loading').classList.add('hidden');
+                        
+                        // Afficher les résultats
+                        document.getElementById('otp-details').classList.add('hidden');
+                        document.getElementById('validation-result').classList.remove('hidden');
+                        
+                        // Récupérer la réponse JSON
+                        const data = await response.json();
+                        
+                        if (response.ok && data.success) {
+                            // Masquer les tokens sensibles pour l'affichage
+                            const displayData = {...data};
+                            if (displayData.access_token) {
+                                displayData.access_token = displayData.access_token.substring(0, 10) + '...';
+                            }
+                            if (displayData.refresh_token) {
+                                displayData.refresh_token = displayData.refresh_token.substring(0, 10) + '...';
+                            }
+                            
+                            // Afficher le succès
+                            document.getElementById('result-success').classList.remove('hidden');
+                            document.getElementById('auth-info').textContent = JSON.stringify(displayData, null, 2);
+                            document.getElementById('login-button').classList.remove('hidden');
+                            
+                            // Stocker les tokens dans sessionStorage
+                            sessionStorage.setItem('auth_data', JSON.stringify(data));
+                        } else {
+                            // Afficher l'erreur
+                            document.getElementById('result-error').classList.remove('hidden');
+                            document.getElementById('error-message').textContent = data.message || "Une erreur s'est produite lors de la validation de l'OTP";
+                            document.getElementById('auth-info').textContent = JSON.stringify(data, null, 2);
+                        }
+                    } catch (error) {
+                        // Cacher le chargement
+                        document.getElementById('loading').classList.add('hidden');
+                        document.getElementById('validate-button').disabled = false;
+                        
+                        // Afficher l'erreur
+                        alert("Erreur de communication avec le serveur : " + error.message);
+                    }
+                });
+                
+                // Gérer le bouton de connexion (simulation)
+                document.getElementById('login-button').addEventListener('click', function() {
+                    alert("Connexion réussie à SelfCare !");
+                    // Rediriger vers une page de tableau de bord simulée
+                    // window.location.href = "/selfcare/dashboard";
+                });
+            }
+        });
+    </script>
+</body>
+</html>
