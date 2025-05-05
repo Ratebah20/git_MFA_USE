@@ -11,7 +11,7 @@ app.secret_key = secrets.token_hex(16)
 
 # Configuration de base
 MFA_URL = "https://acc.portail.orange.lu"  # URL réelle du portail MFA
-SELFCARE_SIMULATED_URL = "http://localhost:5000/selfcare"  # Notre simulateur SelfCare
+SELFCARE_SIMULATED_URL = "https://mfates.netlify.app/"  # Notre simulateur SelfCare
 
 # Désactiver la vérification SSL pour les environnements de développement
 VERIFY_SSL = False

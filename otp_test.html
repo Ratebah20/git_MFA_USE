@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de résolution OTP - Orange</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 2rem;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #ff7900;
+            color: white;
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .card {
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        .btn-orange {
+            background-color: #ff7900;
+            color: white;
+        }
+        .btn-orange:hover {
+            background-color: #e56c00;
+            color: white;
+        }
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            padding: 1.5rem 0;
+            background-color: #f8f9fa;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Test de résolution OTP</h1>
+            <p class="lead">Outil de validation directe des OTP</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header">
+                        Validation manuelle d'un OTP
+                    </div>
+                    <div class="card-body">
+                        <p>Cet outil vous permet de tester directement la résolution d'un OTP sans passer par le flux complet d'authentification MFA.</p>
+                        
+                        <form id="otp-form" class="mt-4">
+                            <div class="form-group">
+                                <label for="otp-input">OTP à valider :</label>
+                                <input type="text" class="form-control" id="otp-input" placeholder="Entrez l'OTP à valider">
+                                <small class="form-text text-muted">Entrez l'OTP obtenu d'une précédente session ou généré manuellement.</small>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-orange">Valider l'OTP</button>
+                            </div>
+                        </form>
+                        
+                        <div id="result-container" class="mt-4 hidden">
+                            <h5>Résultat de la validation :</h5>
+                            
+                            <div class="alert alert-success hidden" id="success-alert">
+                                <strong>Succès !</strong> L'OTP a été validé avec succès.
+                            </div>
+                            
+                            <div class="alert alert-danger hidden" id="error-alert">
+                                <strong>Erreur !</strong> <span id="error-message"></span>
+                            </div>
+                            
+                            <h6 class="mt-3">Informations d'authentification :</h6>
+                            <pre id="auth-info">Aucune information disponible</pre>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="/" class="btn btn-secondary">Retour à l'accueil</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        Instructions
+                    </div>
+                    <div class="card-body">
+                        <h5>Comment tester un OTP ?</h5>
+                        <ol>
+                            <li>Obtenez un OTP valide en passant par le flux d'authentification normal</li>
+                            <li>Copiez cet OTP avant de l'utiliser</li>
+                            <li>Collez-le dans le champ ci-dessus et validez</li>
+                            <li>Vérifiez que vous obtenez bien une erreur d'OTP déjà utilisé</li>
+                        </ol>
+                        
+                        <h5 class="mt-3">Tests possibles :</h5>
+                        <ul>
+                            <li>OTP invalide : entrez un OTP aléatoire</li>
+                            <li>OTP déjà utilisé : utilisez un OTP déjà résolu</li>
+                            <li>OTP expiré : utilisez un OTP généré il y a plus de 5 minutes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>Simulateur SelfCare pour tests d'intégration - Orange Luxembourg</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const otpForm = document.getElementById('otp-form');
+            
+            otpForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Récupérer l'OTP
+                const otpInput = document.getElementById('otp-input');
+                const otp = otpInput.value.trim();
+                
+                if (!otp) {
+                    alert('Veuillez entrer un OTP valide');
+                    return;
+                }
+                
+                try {
+                    // Appeler l'API pour valider l'OTP
+                    const response = await fetch('/resolve-otp', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            otp_token: otp
+                        })
+                    });
+                    
+                    // Afficher le conteneur de résultats
+                    const resultContainer = document.getElementById('result-container');
+                    resultContainer.classList.remove('hidden');
+                    
+                    // Récupérer la réponse JSON
+                    const data = await response.json();
+                    
+                    // Afficher le résultat
+                    const successAlert = document.getElementById('success-alert');
+                    const errorAlert = document.getElementById('error-alert');
+                    const errorMessage = document.getElementById('error-message');
+                    const authInfo = document.getElementById('auth-info');
+                    
+                    // Cacher les alertes par défaut
+                    successAlert.classList.add('hidden');
+                    errorAlert.classList.add('hidden');
+                    
+                    if (response.ok && data.success) {
+                        // Afficher le succès
+                        successAlert.classList.remove('hidden');
+                        
+                        // Masquer les tokens sensibles pour l'affichage
+                        const displayData = {...data};
+                        if (displayData.access_token) {
+                            displayData.access_token = displayData.access_token.substring(0, 10) + '...';
+                        }
+                        if (displayData.refresh_token) {
+                            displayData.refresh_token = displayData.refresh_token.substring(0, 10) + '...';
+                        }
+                        
+                        // Afficher les informations d'authentification
+                        authInfo.textContent = JSON.stringify(displayData, null, 2);
+                    } else {
+                        // Afficher l'erreur
+                        errorAlert.classList.remove('hidden');
+                        errorMessage.textContent = data.message || "Une erreur s'est produite lors de la validation de l'OTP";
+                        
+                        // Afficher les détails de l'erreur
+                        authInfo.textContent = JSON.stringify(data, null, 2);
+                    }
+                } catch (error) {
+                    // Afficher l'erreur
+                    alert("Erreur de communication avec le serveur : " + error.message);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

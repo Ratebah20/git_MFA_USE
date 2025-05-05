@@ -3,69 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulateur SelfCare Orange - Redirection</title>
+    <title>Simulateur SelfCare Orange</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
+            padding-top: 2rem;
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
-            text-align: center;
         }
-        .logo {
-            margin-bottom: 30px;
-        }
-        .container {
-            border: 1px solid #ddd;
-            padding: 20px;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            margin-top: 50px;
-        }
-        h1 {
-            color: #ff7900;
-        }
-        p {
-            margin-bottom: 20px;
-        }
-        .btn {
-            display: inline-block;
+        .header {
             background-color: #ff7900;
             color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .card {
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #f8f9fa;
             font-weight: bold;
-            margin-top: 20px;
         }
-        .btn:hover {
-            background-color: #e56a00;
+        .btn-orange {
+            background-color: #ff7900;
+            color: white;
         }
-        .loading {
-            margin-top: 20px;
-            font-style: italic;
-            color: #666;
+        .btn-orange:hover {
+            background-color: #e56c00;
+            color: white;
+        }
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            padding: 1.5rem 0;
+            background-color: #f8f9fa;
         }
     </style>
-    <!-- Redirection automatique après 2 secondes -->
-    <meta http-equiv="refresh" content="2;url=/selfcare/login">
 </head>
 <body>
-    <div class="container">
-        <h1>Simulateur SelfCare Orange</h1>
-        <p>Bienvenue sur le simulateur de l'application SelfCare pour les tests de redirection OTP.</p>
-        <p>Vous allez être redirigé automatiquement vers la page de login...</p>
-        <div class="loading">Chargement en cours...</div>
-        <a href="/selfcare/login" class="btn">Accéder directement</a>
+    <div class="header">
+        <div class="container">
+            <h1>Simulateur SelfCare Orange</h1>
+            <p class="lead">Testez le flux complet d'authentification MFA et redirection OTP</p>
+        </div>
     </div>
 
-    <script>
-        // Script pour redirection alternative si meta refresh ne fonctionne pas
-        setTimeout(function() {
-            window.location.href = "/selfcare/login";
-        }, 2000);
-    </script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header">
+                        Bienvenue sur le simulateur SelfCare
+                    </div>
+                    <div class="card-body">
+                        <p>Ce simulateur vous permet de tester l'intégration complète entre l'application SelfCare et le portail MFA d'Orange Luxembourg, avec le mécanisme de redirection OTP.</p>
+                        
+                        <h5 class="mt-4">Fonctionnalités disponibles :</h5>
+                        <ul>
+                            <li>Simulation de l'application SelfCare</li>
+                            <li>Intégration avec le vrai portail MFA</li>
+                            <li>Réception et validation d'OTP</li>
+                            <li>Test du flux complet de redirection</li>
+                        </ul>
+                        
+                        <div class="text-center mt-4">
+                            <a href="/selfcare/login" class="btn btn-orange btn-lg">Commencer le test</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        Outils de test
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Test de résolution OTP</h5>
+                                        <p class="card-text">Testez directement la résolution d'un OTP spécifique</p>
+                                        <a href="/otp-test" class="btn btn-orange">Tester un OTP</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Redirection directe</h5>
+                                        <p class="card-text">Aller directement au portail MFA</p>
+                                        <a href="/mfa-redirect" class="btn btn-orange">Redirection MFA</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>Simulateur SelfCare pour tests d'intégration - Orange Luxembourg</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

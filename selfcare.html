@@ -157,8 +157,7 @@
                         document.getElementById('validate-button').disabled = true;
                         
                         // Appeler l'API pour valider l'OTP
-                        // Utiliser l'URL complète du serveur MFA au lieu d'un chemin relatif pour Netlify
-                        const response = await fetch('https://acc.portail.orange.lu/resolve-otp', {
+                        const response = await fetch('/resolve-otp', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
