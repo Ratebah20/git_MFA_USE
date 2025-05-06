@@ -4,10 +4,275 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SelfCare Orange - Validation OTP</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Style intégré plutôt que CDN externe pour éviter les problèmes de CSP -->
+    <style>
+        /* Styles de base pour remplacer Bootstrap */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            color: #212529;
+            background-color: #f8f9fa;
+        }
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 1140px;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        .col-md-6, .col-12 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        @media (min-width: 768px) {
+            .col-md-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0,0,0,.125);
+            border-radius: .25rem;
+            margin-bottom: 1rem;
+        }
+        .card-header {
+            padding: .75rem 1.25rem;
+            margin-bottom: 0;
+            background-color: rgba(0,0,0,.03);
+            border-bottom: 1px solid rgba(0,0,0,.125);
+            font-weight: 500;
+            font-size: 1.25rem;
+        }
+        .card-body {
+            flex: 1 1 auto;
+            min-height: 1px;
+            padding: 1.25rem;
+        }
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            cursor: pointer;
+        }
+        .btn-primary {
+            color: #fff;
+            background-color: #f57b18;
+            border-color: #f57b18;
+        }
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #d96b12;
+            border-color: #d96b12;
+        }
+        .btn-secondary {
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            color: #fff;
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+        .alert {
+            position: relative;
+            padding: .75rem 1.25rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: .25rem;
+        }
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-control {
+            display: block;
+            width: 100%;
+            height: calc(1.5em + .75rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .mt-3 {
+            margin-top: 1rem !important;
+        }
+        .mb-3 {
+            margin-bottom: 1rem !important;
+        }
+        .mt-4 {
+            margin-top: 1.5rem !important;
+        }
+        .mb-4 {
+            margin-bottom: 1.5rem !important;
+        }
+        .text-center {
+            text-align: center !important;
+        }
+        .font-weight-bold {
+            font-weight: 700 !important;
+        }
+        pre {
+            display: block;
+            font-size: 87.5%;
+            color: #212529;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: .25rem;
+            overflow: auto;
+            margin-bottom: 1rem;
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+    </style>
+    <!-- Scripts intégrés pour éviter les problèmes de CSP -->
+    <script>
+        // Version simplifiée des fonctionnalités jQuery dont nous avons besoin
+        window.$ = function(selector) {
+            const elements = document.querySelectorAll(selector);
+            return {
+                on: function(event, callback) {
+                    elements.forEach(el => el.addEventListener(event, callback));
+                    return this;
+                },
+                hide: function() {
+                    elements.forEach(el => el.style.display = 'none');
+                    return this;
+                },
+                show: function() {
+                    elements.forEach(el => el.style.display = 'block');
+                    return this;
+                },
+                addClass: function(className) {
+                    elements.forEach(el => el.classList.add(className));
+                    return this;
+                },
+                removeClass: function(className) {
+                    elements.forEach(el => el.classList.remove(className));
+                    return this;
+                },
+                text: function(text) {
+                    if (text === undefined) {
+                        return elements[0] ? elements[0].textContent : null;
+                    }
+                    elements.forEach(el => el.textContent = text);
+                    return this;
+                },
+                html: function(html) {
+                    if (html === undefined) {
+                        return elements[0] ? elements[0].innerHTML : null;
+                    }
+                    elements.forEach(el => el.innerHTML = html);
+                    return this;
+                },
+                val: function(value) {
+                    if (value === undefined) {
+                        return elements[0] ? elements[0].value : null;
+                    }
+                    elements.forEach(el => el.value = value);
+                    return this;
+                },
+                prop: function(prop, value) {
+                    if (value === undefined) {
+                        return elements[0] ? elements[0][prop] : null;
+                    }
+                    elements.forEach(el => el[prop] = value);
+                    return this;
+                }
+            };
+        };
+        
+        // Alias pour document.ready
+        window.$(document).ready = function(callback) {
+            if (document.readyState !== 'loading') {
+                callback();
+            } else {
+                document.addEventListener('DOMContentLoaded', callback);
+            }
+        };
+        
+        // Alias pour $.ajax
+        window.$.ajax = function(options) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open(options.type || 'GET', options.url);
+                
+                if (options.headers) {
+                    Object.keys(options.headers).forEach(key => {
+                        xhr.setRequestHeader(key, options.headers[key]);
+                    });
+                }
+                
+                xhr.onload = function() {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        resolve(JSON.parse(xhr.response));
+                    } else {
+                        reject({
+                            status: xhr.status,
+                            statusText: xhr.statusText
+                        });
+                    }
+                };
+                
+                xhr.onerror = function() {
+                    reject({
+                        status: xhr.status,
+                        statusText: xhr.statusText
+                    });
+                };
+                
+                if (options.data) {
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.send(JSON.stringify(options.data));
+                } else {
+                    xhr.send();
+                }
+            });
+        };
+    </script>
     <script>
         // Fonction pour extraire les paramètres de l'URL
         function getUrlParams() {
