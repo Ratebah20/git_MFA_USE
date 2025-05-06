@@ -172,6 +172,21 @@
     <script>
         // Version simplifiée des fonctionnalités jQuery dont nous avons besoin
         window.$ = function(selector) {
+            // Gérer le cas spécial de document
+            if (selector === document) {
+                return {
+                    ready: function(callback) {
+                        if (document.readyState !== 'loading') {
+                            callback();
+                        } else {
+                            document.addEventListener('DOMContentLoaded', callback);
+                        }
+                        return this;
+                    }
+                };
+            }
+            
+            // Pour tous les autres sélecteurs
             const elements = document.querySelectorAll(selector);
             return {
                 on: function(event, callback) {
@@ -223,15 +238,6 @@
                     return this;
                 }
             };
-        };
-        
-        // Alias pour document.ready
-        window.$(document).ready = function(callback) {
-            if (document.readyState !== 'loading') {
-                callback();
-            } else {
-                document.addEventListener('DOMContentLoaded', callback);
-            }
         };
         
         // Alias pour $.ajax
