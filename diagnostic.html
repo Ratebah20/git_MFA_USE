@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic de connexion MFA</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 2rem;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #ff7900;
+            color: white;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .card {
+            margin-bottom: 1.5rem;
+        }
+        .btn-orange {
+            background-color: #ff7900;
+            color: white;
+        }
+        .btn-orange:hover {
+            background-color: #e56c00;
+            color: white;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        .status {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        .status-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status-error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Diagnostic de connexion MFA</h2>
+            <p>Cette page permet de tester les différentes étapes du flux MFA</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Test de connectivité au serveur MFA
+                    </div>
+                    <div class="card-body">
+                        <p>Ce test vérifie si votre navigateur peut contacter le serveur MFA.</p>
+                        <button id="testConnectivity" class="btn btn-orange">
+                            Tester la connectivité
+                        </button>
+                        <div id="connectivityResult" class="mt-3"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        Test de redirection directe
+                    </div>
+                    <div class="card-body">
+                        <p>Ce test ouvre le portail MFA dans un nouvel onglet.</p>
+                        <button id="openMFA" class="btn btn-orange">
+                            Ouvrir le portail MFA
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Test de redirection avec paramètres
+                    </div>
+                    <div class="card-body">
+                        <p>Ce test simule la redirection avec l'URL de callback.</p>
+                        <div class="form-group">
+                            <label for="redirectUrl">URL de callback :</label>
+                            <input type="text" class="form-control" id="redirectUrl" value="https://mfates.netlify.app/selfcare" />
+                        </div>
+                        <button id="testRedirect" class="btn btn-orange">
+                            Tester la redirection
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        Informations système
+                    </div>
+                    <div class="card-body">
+                        <p><strong>URL actuelle :</strong> <span id="currentUrl"></span></p>
+                        <p><strong>Navigateur :</strong> <span id="browserInfo"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        Journal d'événements
+                    </div>
+                    <div class="card-body">
+                        <pre id="eventLog">Aucun événement pour le moment...</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Afficher l'URL courante
+            document.getElementById('currentUrl').textContent = window.location.href;
+            
+            // Afficher les informations du navigateur
+            document.getElementById('browserInfo').textContent = navigator.userAgent;
+            
+            // Fonction pour ajouter un message au journal
+            function log(message) {
+                const eventLog = document.getElementById('eventLog');
+                const timestamp = new Date().toLocaleTimeString();
+                eventLog.textContent = `[${timestamp}] ${message}\n${eventLog.textContent}`;
+            }
+            
+            // Test de connectivité
+            document.getElementById('testConnectivity').addEventListener('click', async function() {
+                const resultElement = document.getElementById('connectivityResult');
+                resultElement.innerHTML = '<div class="text-center"><div class="spinner-border text-warning" role="status"></div> Test en cours...</div>';
+                
+                try {
+                    log('Tentative de connexion au serveur MFA...');
+                    
+                    // Utilisation de fetch pour tester la connectivité
+                    const startTime = performance.now();
+                    const response = await fetch('https://acc.portail.orange.lu/', {
+                        method: 'HEAD',
+                        mode: 'no-cors', // Important pour éviter les erreurs CORS
+                        cache: 'no-cache'
+                    });
+                    
+                    const endTime = performance.now();
+                    const duration = Math.round(endTime - startTime);
+                    
+                    // Comme nous utilisons no-cors, nous ne pouvons pas vraiment vérifier le statut
+                    // Mais si nous arrivons ici sans exception, c'est probablement un succès
+                    resultElement.innerHTML = `<div class="status status-success">
+                        Connexion réussie ! Temps de réponse : ${duration} ms
+                    </div>`;
+                    
+                    log(`Connexion au serveur MFA réussie (${duration} ms)`);
+                } catch (error) {
+                    resultElement.innerHTML = `<div class="status status-error">
+                        Échec de la connexion : ${error.message}
+                    </div>`;
+                    
+                    log(`Erreur de connexion au serveur MFA : ${error.message}`);
+                }
+            });
+            
+            // Ouvrir le portail MFA directement
+            document.getElementById('openMFA').addEventListener('click', function() {
+                const mfaUrl = 'https://acc.portail.orange.lu/';
+                log(`Ouverture du portail MFA : ${mfaUrl}`);
+                window.open(mfaUrl, '_blank');
+            });
+            
+            // Test de redirection avec paramètres
+            document.getElementById('testRedirect').addEventListener('click', function() {
+                const redirectUrl = document.getElementById('redirectUrl').value.trim();
+                
+                if (redirectUrl) {
+                    const targetUrl = `https://acc.portail.orange.lu/login?redirect_uri=${encodeURIComponent(redirectUrl)}`;
+                    log(`Redirection vers : ${targetUrl}`);
+                    
+                    // Ouvrir dans un nouvel onglet pour ne pas perdre les données de la page actuelle
+                    window.open(targetUrl, '_blank');
+                } else {
+                    alert('Veuillez saisir une URL de redirection');
+                }
+            });
+            
+            // Logging initial
+            log('Page de diagnostic chargée');
+        });
+    </script>
+</body>
+</html>

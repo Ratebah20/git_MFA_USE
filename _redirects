@@ -1,3 +1,10 @@
-/* /index.html 200
-/selfcare/* /selfcare.html 200
-/selfcare/login /selfcare_login.html 200
+# Redirection de base
+/  /index.html 200
+
+# Routes Selfcare
+/selfcare  /selfcare.html 200
+/selfcare/  /selfcare.html 200
+/selfcare/login  /selfcare_login.html 200
+
+# Fallback pour les routes SPA
+/*  /index.html 200

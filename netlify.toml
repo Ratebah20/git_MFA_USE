@@ -1,0 +1,30 @@
+[build]
+  publish = "/"
+
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/selfcare"
+  to = "/selfcare.html"
+  status = 200
+
+[[redirects]]
+  from = "/selfcare/login"
+  to = "/selfcare_login.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    # Allow navigation vers acc.portail.orange.lu
+    Content-Security-Policy = "default-src 'self' https://acc.portail.orange.lu https://stackpath.bootstrapcdn.com https://www.orange.lu; connect-src 'self' https://acc.portail.orange.lu; form-action 'self' https://acc.portail.orange.lu; frame-ancestors 'none'; img-src 'self' https://www.orange.lu data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://stackpath.bootstrapcdn.com;"
