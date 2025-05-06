@@ -1,11 +1,95 @@
-[Mon May 05 14:37:36.967961 2025] [ssl:info] [pid 402906:tid 134631173129920] [client 192.168.158.203:20475] AH01964: Connection to child 13 established (server acc.portail.orange.lu:443)
-[Mon May 05 14:37:36.906633 2025] [ssl:info] [pid 402907:tid 134631315736256] [client 192.168.158.203:20476] AH01998: Connection closed to child 77 with abortive shutdown (server acc.portail.orange.lu:443)
-[Mon May 05 14:37:36.906614 2025] [ssl:info] [pid 402907:tid 134631315736256] SSL Library Error: error:0A000416:SSL routines::sslv3 alert certificate unknown (SSL alert number 46)
-[Mon May 05 14:37:36.906589 2025] [ssl:info] [pid 402907:tid 134631315736256] [client 192.168.158.203:20476] AH02008: SSL library error 1 in handshake (server acc.portail.orange.lu:443)
-[Mon May 05 14:37:36.875280 2025] [ssl:info] [pid 402907:tid 134631315736256] [client 192.168.158.203:20476] AH01964: Connection to child 77 established (server acc.portail.orange.lu:443)
-[Mon May 05 14:37:19.043747 2025] [ssl:info] [pid 402907:tid 134631357679296] [client 192.168.158.203:42043] AH01964: Connection to child 73 established (server acc.portail.orange.lu:443)
-[Mon May 05 14:37:18.991453 2025] [ssl:info] [pid 402907:tid 134631076660928] [client 192.168.158.203:42045] AH01998: Connection closed to child 87 with abortive shutdown (server acc.portail.orange.lu:443)
-[Mon May 05 14:37:18.991447 2025] [ssl:info] [pid 402907:tid 134631076660928] SSL Library Error: error:0A000416:SSL routines::sslv3 alert certificate unknown (SSL alert number 46)
-[Mon May 05 14:37:18.991420 2025] [ssl:info] [pid 402907:tid 134631076660928] [client 192.168.158.203:42045] AH02008: SSL library error 1 in handshake (server acc.portail.orange.lu:443)
-[Mon May 05 14:37:18.961395 2025] [ssl:info] [pid 402907:tid 134631076660928] [client 192.168.158.203:42045] AH01964: Connection to child 87 established (server acc.portail.orange.lu:443)
-[Mon May 05 14:37:10.554051 2025] [wsgi:error] [pid 402905:tid 134631468828352] [remote 192.168.158.203:41970] INFO:app: MFA d\xc3\xa9j\xc3\xa0 configur\xc3\xa9
+[Tue May 06 16:04:27.856280 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] INFO:app: MFA d\xc3\xa9j\xc3\xa0 configur\xc3\xa9
+[Tue May 06 16:04:27.856270 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] 2025-05-06 16:04:27,855 [INFO] -  MFA d\xc3\xa9j\xc3\xa0 configur\xc3\xa9
+[Tue May 06 16:04:27.856250 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Arguments: ()
+[Tue May 06 16:04:27.856247 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Message: ' MFA d\xc3\xa9j\xc3\xa0 configur\xc3\xa9'
+[Tue May 06 16:04:27.856240 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     current_app.logger.info(" MFA d\xc3\xa9j\xc3\xa0 configur\xc3\xa9")
+[Tue May 06 16:04:27.856233 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/auth.py", line 139, in login
+[Tue May 06 16:04:27.856214 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+[Tue May 06 16:04:27.856211 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+[Tue May 06 16:04:27.856207 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     rv = self.dispatch_request()
+[Tue May 06 16:04:27.856205 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+[Tue May 06 16:04:27.856201 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     response = self.full_dispatch_request()
+[Tue May 06 16:04:27.856199 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+[Tue May 06 16:04:27.856194 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     return self.wsgi_app(environ, start_response)
+[Tue May 06 16:04:27.856190 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+[Tue May 06 16:04:27.856119 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Call stack:
+[Tue May 06 16:04:27.856111 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] UnicodeEncodeError: 'ascii' codec can't encode character '\\xe9' in position 39: ordinal not in range(128)
+[Tue May 06 16:04:27.856102 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     stream.write(msg + self.terminator)
+[Tue May 06 16:04:27.856096 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/usr/lib/python3.12/logging/__init__.py", line 1163, in emit
+[Tue May 06 16:04:27.856036 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Traceback (most recent call last):
+[Tue May 06 16:04:27.855979 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] --- Logging error ---
+[Tue May 06 16:04:27.855873 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] INFO:app: R\xc3\xa9sultat DB : (20, 'yassin.ahrika@mail.mobistar.be', '$2b$12$dzvvdlnURBWMbFgfVZqFmeF8EJH4GSOit.TIX59QRS4jwVg0AmZve', 'yassin.ahrika@orange.com', 0, None, 792416, None, None, None, datetime.datetime(2025, 3, 24, 13, 29, 32, 240000), 'URGXMTZ4H6RNV5USXQKUPXZAJLMO3MWA', '+352661888717', '984962', datetime.datetime(2025, 3, 24, 14, 46, 11), datetime.datetime(2025, 4, 23, 10, 58, 42), '3d103529-bee4-4d0d-8135-1da7783f5e969bf4d3c9', datetime.datetime(2025, 5, 6, 14, 7, 5, 763000), None, None, None, None)
+[Tue May 06 16:04:27.855848 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] 2025-05-06 16:04:27,855 [INFO] -  R\xc3\xa9sultat DB : (20, 'yassin.ahrika@mail.mobistar.be', '$2b$12$dzvvdlnURBWMbFgfVZqFmeF8EJH4GSOit.TIX59QRS4jwVg0AmZve', 'yassin.ahrika@orange.com', 0, None, 792416, None, None, None, datetime.datetime(2025, 3, 24, 13, 29, 32, 240000), 'URGXMTZ4H6RNV5USXQKUPXZAJLMO3MWA', '+352661888717', '984962', datetime.datetime(2025, 3, 24, 14, 46, 11), datetime.datetime(2025, 4, 23, 10, 58, 42), '3d103529-bee4-4d0d-8135-1da7783f5e969bf4d3c9', datetime.datetime(2025, 5, 6, 14, 7, 5, 763000), None, None, None, None)
+[Tue May 06 16:04:27.855822 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Arguments: ()
+[Tue May 06 16:04:27.855817 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Message: " R\xc3\xa9sultat DB : (20, 'yassin.ahrika@mail.mobistar.be', '$2b$12$dzvvdlnURBWMbFgfVZqFmeF8EJH4GSOit.TIX59QRS4jwVg0AmZve', 'yassin.ahrika@orange.com', 0, None, 792416, None, None, None, datetime.datetime(2025, 3, 24, 13, 29, 32, 240000), 'URGXMTZ4H6RNV5USXQKUPXZAJLMO3MWA', '+352661888717', '984962', datetime.datetime(2025, 3, 24, 14, 46, 11), datetime.datetime(2025, 4, 23, 10, 58, 42), '3d103529-bee4-4d0d-8135-1da7783f5e969bf4d3c9', datetime.datetime(2025, 5, 6, 14, 7, 5, 763000), None, None, None, None)"
+[Tue May 06 16:04:27.855804 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     current_app.logger.info(f" R\xc3\xa9sultat DB : {account}")
+[Tue May 06 16:04:27.855801 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/auth.py", line 104, in login
+[Tue May 06 16:04:27.855796 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+[Tue May 06 16:04:27.855793 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+[Tue May 06 16:04:27.855788 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     rv = self.dispatch_request()
+[Tue May 06 16:04:27.855776 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+[Tue May 06 16:04:27.855772 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     response = self.full_dispatch_request()
+[Tue May 06 16:04:27.855768 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+[Tue May 06 16:04:27.855763 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     return self.wsgi_app(environ, start_response)
+[Tue May 06 16:04:27.855759 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+[Tue May 06 16:04:27.855677 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Call stack:
+[Tue May 06 16:04:27.855666 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] UnicodeEncodeError: 'ascii' codec can't encode character '\\xe9' in position 35: ordinal not in range(128)
+[Tue May 06 16:04:27.855653 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     stream.write(msg + self.terminator)
+[Tue May 06 16:04:27.855646 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/usr/lib/python3.12/logging/__init__.py", line 1163, in emit
+[Tue May 06 16:04:27.855551 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Traceback (most recent call last):
+[Tue May 06 16:04:27.855477 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] --- Logging error ---
+[Tue May 06 16:04:27.851715 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] INFO:app: V\xc3\xa9rification utilisateur yassin.ahrika@mail.mobistar.be en base de donn\xc3\xa9es
+[Tue May 06 16:04:27.851702 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] 2025-05-06 16:04:27,851 [INFO] -  V\xc3\xa9rification utilisateur yassin.ahrika@mail.mobistar.be en base de donn\xc3\xa9es
+[Tue May 06 16:04:27.851679 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Arguments: ()
+[Tue May 06 16:04:27.851677 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Message: ' V\xc3\xa9rification utilisateur yassin.ahrika@mail.mobistar.be en base de donn\xc3\xa9es'
+[Tue May 06 16:04:27.851669 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     current_app.logger.info(f" V\xc3\xa9rification utilisateur {username} en base de donn\xc3\xa9es")
+[Tue May 06 16:04:27.851667 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/auth.py", line 101, in login
+[Tue May 06 16:04:27.851663 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+[Tue May 06 16:04:27.851660 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+[Tue May 06 16:04:27.851656 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     rv = self.dispatch_request()
+[Tue May 06 16:04:27.851653 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+[Tue May 06 16:04:27.851649 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     response = self.full_dispatch_request()
+[Tue May 06 16:04:27.851638 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+[Tue May 06 16:04:27.851634 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     return self.wsgi_app(environ, start_response)
+[Tue May 06 16:04:27.851629 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+[Tue May 06 16:04:27.851545 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Call stack:
+[Tue May 06 16:04:27.851534 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] UnicodeEncodeError: 'ascii' codec can't encode character '\\xe9' in position 35: ordinal not in range(128)
+[Tue May 06 16:04:27.851522 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     stream.write(msg + self.terminator)
+[Tue May 06 16:04:27.851516 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/usr/lib/python3.12/logging/__init__.py", line 1163, in emit
+[Tue May 06 16:04:27.851415 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Traceback (most recent call last):
+[Tue May 06 16:04:27.851331 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] --- Logging error ---
+[Tue May 06 16:04:27.830631 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] INFO:app: Informations utilisateur r\xc3\xa9cup\xc3\xa9r\xc3\xa9es : email=yassin.ahrika@orange.com, mobile=+352661888717
+[Tue May 06 16:04:27.830621 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] 2025-05-06 16:04:27,830 [INFO] -  Informations utilisateur r\xc3\xa9cup\xc3\xa9r\xc3\xa9es : email=yassin.ahrika@orange.com, mobile=+352661888717
+[Tue May 06 16:04:27.830602 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Arguments: ()
+[Tue May 06 16:04:27.830599 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Message: ' Informations utilisateur r\xc3\xa9cup\xc3\xa9r\xc3\xa9es : email=yassin.ahrika@orange.com, mobile=+352661888717'
+[Tue May 06 16:04:27.830592 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     current_app.logger.info(f" Informations utilisateur r\xc3\xa9cup\xc3\xa9r\xc3\xa9es : email={orange_email}, mobile={formatted_mobile}")
+[Tue May 06 16:04:27.830589 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/auth.py", line 97, in login
+[Tue May 06 16:04:27.830585 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+[Tue May 06 16:04:27.830583 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+[Tue May 06 16:04:27.830579 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     rv = self.dispatch_request()
+[Tue May 06 16:04:27.830577 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+[Tue May 06 16:04:27.830573 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     response = self.full_dispatch_request()
+[Tue May 06 16:04:27.830571 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+[Tue May 06 16:04:27.830566 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     return self.wsgi_app(environ, start_response)
+[Tue May 06 16:04:27.830554 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+[Tue May 06 16:04:27.830492 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Call stack:
+[Tue May 06 16:04:27.830483 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] UnicodeEncodeError: 'ascii' codec can't encode character '\\xe9' in position 60: ordinal not in range(128)
+[Tue May 06 16:04:27.830474 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     stream.write(msg + self.terminator)
+[Tue May 06 16:04:27.830469 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/usr/lib/python3.12/logging/__init__.py", line 1163, in emit
+[Tue May 06 16:04:27.830411 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Traceback (most recent call last):
+[Tue May 06 16:04:27.830362 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] --- Logging error ---
+[Tue May 06 16:04:27.830264 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] INFO:app: Num\xc3\xa9ro de t\xc3\xa9l\xc3\xa9phone mobile r\xc3\xa9cup\xc3\xa9r\xc3\xa9 : +352661888717
+[Tue May 06 16:04:27.830214 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] 2025-05-06 16:04:27,829 [INFO] -  Num\xc3\xa9ro de t\xc3\xa9l\xc3\xa9phone mobile r\xc3\xa9cup\xc3\xa9r\xc3\xa9 : +352661888717
+[Tue May 06 16:04:27.830191 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Arguments: ()
+[Tue May 06 16:04:27.830188 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Message: ' Num\xc3\xa9ro de t\xc3\xa9l\xc3\xa9phone mobile r\xc3\xa9cup\xc3\xa9r\xc3\xa9 : +352661888717'
+[Tue May 06 16:04:27.830181 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     current_app.logger.info(f" Num\xc3\xa9ro de t\xc3\xa9l\xc3\xa9phone mobile r\xc3\xa9cup\xc3\xa9r\xc3\xa9 : {formatted_mobile}")
+[Tue May 06 16:04:27.830178 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/auth.py", line 95, in login
+[Tue May 06 16:04:27.830174 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+[Tue May 06 16:04:27.830171 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+[Tue May 06 16:04:27.830167 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     rv = self.dispatch_request()
+[Tue May 06 16:04:27.830165 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+[Tue May 06 16:04:27.830161 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     response = self.full_dispatch_request()
+[Tue May 06 16:04:27.830158 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+[Tue May 06 16:04:27.830154 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]     return self.wsgi_app(environ, start_response)
+[Tue May 06 16:04:27.830150 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813]   File "/OLU/wwwroot/acc.portail.orange.lu/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+[Tue May 06 16:04:27.830059 2025] [wsgi:error] [pid 415503:tid 128015786837696] [remote 192.168.158.203:58813] Call stack:

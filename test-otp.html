@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test OTP - SelfCare Orange</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 2rem;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #ff7900;
+            color: white;
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .card {
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        .btn-orange {
+            background-color: #ff7900;
+            color: white;
+        }
+        .btn-orange:hover {
+            background-color: #e56c00;
+            color: white;
+        }
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            padding: 1.5rem 0;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Test OTP - SelfCare Orange</h1>
+            <p>Cette page vous permet de tester le flux OTP sans dépendre du serveur MFA</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header">
+                        Simulation de redirection OTP
+                    </div>
+                    <div class="card-body">
+                        <p>Cliquez sur le bouton ci-dessous pour simuler une redirection MFA réussie avec un OTP de test.</p>
+                        
+                        <div class="form-group">
+                            <label for="otpValue">OTP Test (vous pouvez le personnaliser) :</label>
+                            <input type="text" class="form-control" id="otpValue" value="TestOTP12345" />
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <button id="simulateButton" class="btn btn-orange">
+                                Simuler redirection avec OTP
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Paramètres avancés
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="redirectUrl">URL de redirection :</label>
+                            <input type="text" class="form-control" id="redirectUrl" value="https://mfates.netlify.app/selfcare" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>Simulateur SelfCare pour tests d'intégration - Orange Luxembourg</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gestionnaire pour le bouton de simulation
+            document.getElementById('simulateButton').addEventListener('click', function() {
+                const otp = document.getElementById('otpValue').value.trim();
+                const redirectUrl = document.getElementById('redirectUrl').value.trim();
+                
+                if (otp && redirectUrl) {
+                    // Construire l'URL avec le paramètre OTP
+                    const targetUrl = `${redirectUrl}?otp_token=${otp}`;
+                    console.log("Redirection vers:", targetUrl);
+                    
+                    // Rediriger vers la page de test
+                    window.location.href = targetUrl;
+                } else {
+                    alert("Veuillez remplir tous les champs");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
