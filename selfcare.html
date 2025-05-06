@@ -329,18 +329,47 @@
             document.getElementById('validate-button').disabled = true;
             
             try {
-                // Appel AJAX pour valider l'OTP (en pointant vers le serveur d'origine)
+                // Essayons une méthode alternative et plus simple pour envoyer l'OTP
+                document.getElementById('validation-details').innerHTML = '<div class="alert alert-info">Envoi de la requête en cours...</div>';
+                
+                // Étape 1: Tentative avec fetch() et options complètes
+                document.getElementById('validation-details').innerHTML += '<div>Tentative #1: fetch() avec options complètes</div>';
+                
                 const response = await fetch('https://acc.portail.orange.lu/resolve-otp', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
                     },
-                    body: JSON.stringify({ otp_token: otp }),
-                    credentials: 'include', // Inclure les cookies pour l'authentification
-                    mode: 'cors'  // Activer le CORS
+                    body: JSON.stringify({ 
+                        otp_token: otp,
+                        source: 'netlify'
+                    }),
+                    credentials: 'include',
+                    mode: 'cors'
                 });
                 
-                const result = await response.json();
+                // Afficher la réponse HTTP brute pour diagnostic
+                document.getElementById('validation-details').innerHTML += `<div>Status HTTP: ${response.status} ${response.statusText}</div>`;
+                
+                // Récupérer le texte brut de la réponse
+                const responseText = await response.text();
+                document.getElementById('validation-details').innerHTML += `<div>Réponse brute: ${responseText.substring(0, 100)}...</div>`;
+                
+                // Tenter de parser le JSON (si c'est du JSON valide)
+                let result;
+                try {
+                    result = JSON.parse(responseText);
+                    document.getElementById('validation-details').innerHTML += '<div>La réponse a été parsée avec succès en JSON</div>';
+                } catch (jsonError) {
+                    document.getElementById('validation-details').innerHTML += `<div>Erreur de parsing JSON: ${jsonError.message}</div>`;
+                    // Si ce n'est pas du JSON valide, créer un objet résultat avec l'erreur
+                    result = {
+                        success: false,
+                        message: `Erreur de format: ${jsonError.message}`,
+                        responseText: responseText.substring(0, 200)
+                    };
+                }
                 
                 // Afficher le résultat
                 const resultElement = document.getElementById('validation-result');
