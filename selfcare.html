@@ -373,24 +373,31 @@
                 
                 // Afficher le résultat
                 const resultElement = document.getElementById('validation-result');
+                const resultSuccessElement = document.getElementById('result-success');
+                const resultErrorElement = document.getElementById('result-error');
                 const resultTitleElement = document.getElementById('result-title');
                 const resultContentElement = document.getElementById('result-content');
+                const errorMessageElement = document.getElementById('error-message');
                 
+                // Rendre visible le conteneur du résultat
                 resultElement.classList.remove('hidden');
                 
                 if (response.ok && result.success) {
-                    resultElement.classList.remove('alert-danger');
-                    resultElement.classList.add('alert-success');
+                    // Succès
+                    resultSuccessElement.classList.remove('hidden');
+                    resultErrorElement.classList.add('hidden');
                     resultTitleElement.textContent = "Validation réussie !";
                     resultContentElement.textContent = result.message || "L'OTP a été validé avec succès.";
                 } else {
-                    resultElement.classList.remove('alert-success');
-                    resultElement.classList.add('alert-danger');
-                    resultTitleElement.textContent = "Échec de la validation";
-                    resultContentElement.textContent = result.message || "Erreur lors de la validation de l'OTP.";
+                    // Erreur
+                    resultSuccessElement.classList.add('hidden');
+                    resultErrorElement.classList.remove('hidden');
+                    errorMessageElement.textContent = result.message || "Erreur lors de la validation de l'OTP.";
                 }
                 
                 // Afficher les détails techniques pour le débogage
+                const authInfoElement = document.getElementById('auth-info');
+                authInfoElement.textContent = JSON.stringify(result, null, 2);
                 document.getElementById('result-details').textContent = JSON.stringify(result, null, 2);
                 
             } catch (error) {
@@ -526,9 +533,11 @@
                             </div>
                         </div>
                         
+                        <!-- Résultat de la validation et diagnostics -->
                         <div id="validation-result" class="hidden mt-4">
                             <div class="alert alert-success hidden" id="result-success">
-                                <strong>Succès !</strong> L'OTP a été validé avec succès.
+                                <h5 id="result-title">Validation réussie !</h5>
+                                <p id="result-content">L'OTP a été validé avec succès.</p>
                             </div>
                             <div class="alert alert-danger hidden" id="result-error">
                                 <strong>Erreur !</strong> <span id="error-message"></span>
@@ -536,6 +545,14 @@
                             
                             <h5 class="mt-3">Informations d'authentification</h5>
                             <pre id="auth-info">Aucune information disponible</pre>
+                        </div>
+                        
+                        <!-- Section de diagnostic détaillé -->
+                        <div class="mt-4">
+                            <h4>Informations de diagnostic</h4>
+                            <div id="validation-details" class="card card-body mb-3"></div>
+                            <pre id="result-details" class="mt-3"></pre>
+                        </div>
                             
                             <div class="text-center mt-4">
                                 <button id="login-button" class="btn btn-success hidden">
