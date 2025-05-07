@@ -345,8 +345,7 @@
                         otp_token: otp,
                         source: 'netlify'
                     }),
-                    // Ne pas utiliser credentials: 'include' pour éviter les problèmes CORS
-                    credentials: 'same-origin',
+                    // Ne pas utiliser credentials pour éviter les problèmes CORS
                     mode: 'cors'
                 });
                 
